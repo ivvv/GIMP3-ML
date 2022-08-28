@@ -1,0 +1,5 @@
+PLUGIN_ID = "interpolation"
+MASK_RESULT = "result_img"
+RESULT_IMG = MASK_RESULT + "{}.png"
+BASE_IMG = "input_image{}.png"
+PLUGIN_LICENSE="PLUGIN LICENSE : MIT"

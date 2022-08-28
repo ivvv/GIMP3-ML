@@ -1,0 +1,16 @@
+matplotlib
+future
+pyyaml
+tqdm
+numpy
+scipy
+gdown
+typing
+onnxruntime
+pymatting
+filetype
+requests
+opencv-python
+pretrainedmodels
+scikit-image
+timm

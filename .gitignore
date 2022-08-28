@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__
+*~
+*$py.class
+*.so
+*.pyc
+dist/
+.idea/
+.vscode/
+*_backup
+gimpml.egg-info/
+*.json
+error_log.txt
+gimpml/weights/
