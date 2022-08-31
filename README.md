@@ -22,6 +22,8 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
 4. You should now find the GIMP-ML plugins under Layers → GIMP-ML. 
 5. You can download [the weights here](https://drive.google.com/drive/folders/1ko7j1WOJltJcv-goIBNTIGGniZ68kEQa), or from the weight links below.
 
+![Screenshot](screenshot.png)
+
 # References
 ### Background Removal
 * Source: https://github.com/danielgatis/rembg
@@ -29,7 +31,7 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
     - u2net ([download](https://drive.google.com/uc?id=1tCU5MM1LhRgGou5OpmpjBQbSrYIUoYab), [source](https://github.com/xuebinqin/U-2-Net)): A pre-trained model for general use cases.
     - u2netp ([download](https://drive.google.com/uc?id=1tNuFmLv0TSNDjYIkjEdeH1IWKQdUA4HR), [source](https://github.com/xuebinqin/U-2-Net)): A lightweight version of u2net model.
     - u2net_human_seg ([download](https://drive.google.com/uc?id=1ZfqwVxu-1XWC1xU1GHIP-FM_Knd_AX5j), [source](https://github.com/xuebinqin/U-2-Net)): A pre-trained model for human segmentation.
-    - *-u2net_cloth_seg* ([download](https://drive.google.com/uc?id=15rKbQSXQzrKCQurUjZFg8HqzZad8bcyz), [source](https://github.com/levindabhi/cloth-segmentation)): A pre-trained model for Cloths Parsing from human portrait. Here clothes are parsed into 3 category: Upper body, Lower body and Full body.
+    - *(unused) u2net_cloth_seg* ([download](https://drive.google.com/uc?id=15rKbQSXQzrKCQurUjZFg8HqzZad8bcyz), [source](https://github.com/levindabhi/cloth-segmentation)): A pre-trained model for Cloths Parsing from human portrait. Here clothes are parsed into 3 category: Upper body, Lower body and Full body.
 * License: MIT License
 
 ### Anime-style Inpainting
@@ -93,6 +95,19 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
      in *Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)*,
      vol. 9906 LNCS, 2016, pp. 694–711.
 
+### Edge Detection (DexiNed)
+* Source: https://github.com/xavysp/DexiNed
+* Weights: [BIPED](https://drive.google.com/file/d/1V56vGTsu7GYiQouCIKvTWl5UKCZ6yCNu/view?usp=sharing)
+* License: MIT license 
+```
+@misc{soria2021dexined_ext,
+    title={Dense Extreme Inception Network for Edge Detection},
+    author={Xavier Soria and Angel Sappa and Patricio Humanante and Arash Arbarinia},
+    year={2021},
+    eprint={arXiv:2112.02250},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}}
+```
 ### DeblurGANv2
 * Source: https://github.com/TAMU-VITA/DeblurGANv2
 * Torch Hub fork: https://github.com/valgur/DeblurGANv2

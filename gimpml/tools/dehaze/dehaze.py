@@ -10,24 +10,22 @@ from gimpml.plugins.dehaze.constants import *
 
 
 def get_dehaze(data_hazy, cpu_flag=False, weight_path=None):
+    checkpoint_path=os.path.join(weight_path, "deepdehaze", "dehazer.pth")
+    if not os.path.isfile(checkpoint_path):
+        raise FileNotFoundError(
+            f"Checkpoint file note found: {checkpoint_path}")
+
     data_hazy = data_hazy / 255.0
     data_hazy = torch.from_numpy(data_hazy).float()
     data_hazy = data_hazy.permute(2, 0, 1)
     dehaze_net = net.dehaze_net()
 
-    if torch.cuda.is_available() and not cpu_flag:
+    if not cpu_flag and torch.cuda.is_available():
         dehaze_net = dehaze_net.cuda()
-        dehaze_net.load_state_dict(
-            torch.load(os.path.join(weight_path, "deepdehaze", "dehazer.pth"))
-        )
+        dehaze_net.load_state_dict(torch.load(checkpoint_path))
         data_hazy = data_hazy.cuda()
     else:
-        dehaze_net.load_state_dict(
-            torch.load(
-                os.path.join(weight_path, "deepdehaze", "dehazer.pth"),
-                map_location=torch.device("cpu"),
-            )
-        )
+        dehaze_net.load_state_dict(torch.load(checkpoint_path, map_location=torch.device("cpu"),))
 
     data_hazy = data_hazy.unsqueeze(0)
     with torch.no_grad():

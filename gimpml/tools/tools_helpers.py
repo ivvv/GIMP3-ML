@@ -1,11 +1,37 @@
 import numpy as np
 
+def remove_alpha(img):
+    if len(img.shape) == 3 and img.shape[2] == 4:  # get rid of alpha channel
+        return img[:, :, 0:3]
+    else:
+        return img
+
 def add_alpha(img):
     import cv2
+    if len(img.shape) == 2:
+        return cv2.cvtColor(img, cv2.COLOR_GRAY2RGBA)
     height, width, channels = img.shape
     if channels < 4:
         return cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
     return cv2.cvtColor(img, cv2.COLOR_BGRA2RGBA)
+    
+def color_to_alpha(img, alpha_color=[255, 255, 255]):
+    #img[:, :, 3] = (255 * (img[:, :, :3] != 255).any(axis=2)).astype(np.uint8)
+    #img[:, :, 3] = (255 - img[:, :, :3].mean(axis=2)).astype(np.uint8)
+    alpha = np.max(
+        [
+            np.abs(img[..., 0] - alpha_color[0]),
+            np.abs(img[..., 1] - alpha_color[1]),
+            np.abs(img[..., 2] - alpha_color[2]),
+        ],
+        axis=0,
+    )
+    ny, nx, _ = img.shape
+    img = np.zeros((ny, nx, 4), dtype=img.dtype)
+    for i in range(3):
+        img[..., i] = img[..., i]
+    img[..., 3] = alpha
+    return img
 
 def yuv2rgb(yuv):
     """ Converts YUV numpy array  to RGB. """
@@ -24,7 +50,6 @@ def split_alpha(array: np.ndarray):
     elif d == 3: return array, None
     elif d == 4: return array[:, :, 0:3], array[:, :, 3:4]
     raise ValueError("Image has too many channels ({}), expected <4".format(d))
-
 
 def merge_alpha(image: np.ndarray, alpha: np.ndarray):
     """ Merges numpy array from (RGB, alpha) to RGBA. """

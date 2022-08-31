@@ -228,7 +228,7 @@ def run(procedure, run_mode, image, n_drawables, layer, args, data):
                 )
 
 
-class InPainting(Gimp.PlugIn):
+class AnimeInPainting(Gimp.PlugIn):
     ## Parameters ##
     __gproperties__ = {
         "force_cpu": (
@@ -275,4 +275,4 @@ class InPainting(Gimp.PlugIn):
         return procedure
 
 
-Gimp.main(InPainting.__gtype__, sys.argv)
+Gimp.main(AnimeInPainting.__gtype__, sys.argv)

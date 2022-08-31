@@ -286,7 +286,7 @@ def run(procedure, run_mode, image, n_drawables, layer, args, data):
                 )
 
 
-class InPainting(Gimp.PlugIn):
+class RemoveBG(Gimp.PlugIn):
     ## Parameters ##
     __gproperties__ = {
         "alpha_matting": (int, _("_AM"), "Alpha matting; 0..255 (Default: 240)", 0, 255, 240, GObject.ParamFlags.READWRITE),
@@ -338,4 +338,4 @@ class InPainting(Gimp.PlugIn):
         return procedure
 
 
-Gimp.main(InPainting.__gtype__, sys.argv)
+Gimp.main(RemoveBG.__gtype__, sys.argv)

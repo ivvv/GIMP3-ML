@@ -173,7 +173,7 @@ def run(procedure, run_mode, image, n_drawables, layer, args, data):
                 )
 
 
-class Kmeans(Gimp.PlugIn):
+class KMeans(Gimp.PlugIn):
     ## Parameters ##
     __gproperties__ = {
         "n_cluster": (
@@ -224,4 +224,4 @@ class Kmeans(Gimp.PlugIn):
         return procedure
 
 
-Gimp.main(Kmeans.__gtype__, sys.argv)
+Gimp.main(KMeans.__gtype__, sys.argv)
