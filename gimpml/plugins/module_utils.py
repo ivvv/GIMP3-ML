@@ -62,11 +62,14 @@ def handle_exceptions(module_name):
                 for f_name in os.listdir(os.path.join(weight_path,"..")):
                     if ERROR_LOG in f_name: os.remove(os.path.join(weight_path,"..", f_name))
             except Exception as error:
-                error_text = traceback.format_exc().splitlines()[3:]
-                error_text = [((line[:200]+"...") if len(line)>200 else line) for line in error_text]
-                error_text = '\n'.join(error_text)
+                error_text = traceback.format_exc()
                 error_text = error_text.replace(config_path, '').replace(os.getenv('APPDATA'), "%APPDATA%")
-                print(error_text, module_name)
+                error_text = error_text.splitlines()[3:]
+                print('\n'.join(error_text))
+                error_text = [((line[:200]+"...") if len(line)>200 else line) for line in error_text]
+                error_text = [(line[2:] if (line[0:2] == "  ") else line) for line in error_text]
+                error_text = '\n'.join(error_text)
+                
                 set_model_config({"inference_status": "failed", "last_error": error_text}, module_name)
         return wrapper
     return decorator

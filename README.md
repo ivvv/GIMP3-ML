@@ -20,7 +20,7 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
       * Install [Python 3.10](https://www.python.org/downloads/).
       * Run `install.cmd` from the unpacked folder.
 4. You should now find the GIMP-ML plugins under Layers → GIMP-ML. 
-5. You can download the rest of the weights [from here](https://drive.google.com/drive/folders/1ko7j1WOJltJcv-goIBNTIGGniZ68kEQa) if they are missing.
+5. You can download [the weights here](https://drive.google.com/drive/folders/1ko7j1WOJltJcv-goIBNTIGGniZ68kEQa), or from the weight links below.
 
 # References
 ### Background Removal
@@ -43,6 +43,19 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
   journal={arXiv preprint},
   year={2019}}
 ```
+### Demosaics
+* Source: 
+  * Demosaics: https://github.com/rekaXua/demosaic_project
+  * ESRGAN: https://github.com/xinntao/ESRGAN
+* Weights: [4x_FatalPixels](https://de-next.owncube.com/index.php/s/mDGmi7NgdyyQRXL/download?path=%2F&files=4x_FatalPixels_340000_G.pth)
+* Licenses: 
+  * Demosaics: GNU Affero General Public License v3.0
+  * ESRGAN: Apache-2.0 license 
+> [[Paper](https://arxiv.org/abs/2107.10833)] <br>
+> [Xintao Wang](https://xinntao.github.io/), Liangbin Xie, [Chao Dong](https://scholar.google.com.hk/citations?user=OSDCB0UAAAAJ), [Ying Shan](https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en) <br>
+> Applied Research Center (ARC), Tencent PCG<br>
+> Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences
+
 ### Inpainting
 * Source: https://github.com/a-mos/High_Resolution_Image_Inpainting
 * License: [Creative Commons Attribution-NonCommercial 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/)
@@ -86,12 +99,6 @@ The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
 * License: [BSD 3-clause](https://github.com/TAMU-VITA/DeblurGANv2/blob/master/LICENSE)
 * O. Kupyn, T. Martyniuk, J. Wu, and Z. Wang, “[DeblurGAN-v2: Deblurring (Orders-of-Magnitude) Faster and Better](https://arxiv.org/abs/1908.03826),”
   in *2019 IEEE/CVF International Conference on Computer Vision (ICCV)*, 2019, pp. 8877–8886.
-
-### MiDaS
-* Source: https://github.com/intel-isl/MiDaS
-* License: [MIT](https://github.com/intel-isl/MiDaS/blob/master/LICENSE), (c) 2019 Intel ISL (Intel Intelligent Systems Lab)
-* R. Ranftl, K. Lasinger, D. Hafner, K. Schindler, and V. Koltun,
-  “[Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer](http://arxiv.org/abs/1907.01341),” 2019.
 
 ### Monodepth2
 * Source: https://github.com/nianticlabs/monodepth2

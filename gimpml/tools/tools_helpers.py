@@ -89,3 +89,13 @@ def apply_colormap(image: np.ndarray, cmap='magma'):
     import matplotlib.cm as cm
     mapper = cm.ScalarMappable(norm=lambda x: x, cmap=cmap)
     return mapper.to_rgba(image)[:, :, :3]
+
+def np_alpha_composite(nsrc, ndst):
+    """ Mixes two images with alpha channels. """
+    srcRGB = nsrc[...,:3]
+    dstRGB = ndst[...,:3]
+    srcA = nsrc[...,3]/255.0
+    dstA = ndst[...,3]/255.0
+    outA = srcA + dstA*(1-srcA)
+    outRGB = (srcRGB*srcA[...,np.newaxis] + dstRGB*dstA[...,np.newaxis]*(1-srcA[...,np.newaxis])) / outA[...,np.newaxis]
+    return np.dstack((outRGB, outA*255)).astype(np.uint8)
