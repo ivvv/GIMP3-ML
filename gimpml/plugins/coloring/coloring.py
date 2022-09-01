@@ -95,13 +95,13 @@ def run(procedure, run_mode, image, n_drawables, layers, args, data):
         )
         config_path_output = get_config()
         python_path = config_path_output["python_path"]
-        config_path_output["plugin_path"] = os.path.join(config_path, PLUGIN_ID, "coloring.py")
+        config_path_output["plugin_path"] = os.path.join(config_path, PLUGIN_ID, f"{PLUGIN_ID}_ncol.py")
 
         config = procedure.create_config()
         config.set_property("force_cpu", force_cpu)
         config.begin_run(image, run_mode, args)
 
-        GimpUi.init("coloring.py")
+        GimpUi.init(f"{PLUGIN_ID}.py")
         use_header_bar = Gtk.Settings.get_default().get_property(
             "gtk-dialogs-use-header"
         )
@@ -109,7 +109,7 @@ def run(procedure, run_mode, image, n_drawables, layers, args, data):
         # Check number of selected layers
         if n_drawables > 2:
             show_dialog(
-                "Please select only grayscale image layer and colors mask layer.",
+                "Please select only grayscale image layer and maybe colors mask layer.",
                 "Error!", "error",
                 image_paths
             )
@@ -233,12 +233,12 @@ class Coloring(Gimp.PlugIn):
             )
             procedure.set_image_types("*")
             procedure.set_sensitivity_mask(
-                Gimp.ProcedureSensitivityMask.DRAWABLE |
-                Gimp.ProcedureSensitivityMask.DRAWABLES
+                Gimp.ProcedureSensitivityMask.DRAWABLE
+                #| Gimp.ProcedureSensitivityMask.DRAWABLES
             )
             procedure.set_documentation(
                 N_(
-                    "Performs RGB to grayscale conversion of the current layer\nwith optional color mask layer."
+                    "Performs grayscale to RGB conversion of the current layer."#\nwith optional color mask layer."
                 ),
                 globals()[ "__doc__" ],  # Include docstring from filestart
                 name,

@@ -5,7 +5,7 @@ plugin_loc = os.path.join(os.path.dirname(os.path.realpath(__file__)), "DexiNed"
 sys.path.extend([plugin_loc])
 from losses import *
 from model import DexiNed
-from image import tensor_to_image
+from image import tensor_to_image, image_normalization
 
 from gimpml.plugins.module_utils import *
 from gimpml.plugins.edgedetect.constants import *

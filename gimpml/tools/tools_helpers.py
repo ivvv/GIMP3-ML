@@ -1,5 +1,11 @@
 import numpy as np
 
+yuv_from_rgb_mat = np.array([
+    [0.299, 0.587, 0.114],
+    [-0.14714119, -0.28886916, 0.43601035],
+    [0.61497538, -0.51496512, -0.10001026]
+])
+
 def remove_alpha(img):
     if len(img.shape) == 3 and img.shape[2] == 4:  # get rid of alpha channel
         return img[:, :, 0:3]
