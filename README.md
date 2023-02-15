@@ -2,25 +2,29 @@
 
 Machine Learning plugins for GIMP 3.
 
-Forked from the [original version](https://github.com/kritiksoman/GIMP-ML/tree/GIMP3-ML) to improve the user experience in several aspects:
+Forked from [forked version](https://github.com/UserUnknownFactor/GIMP3-ML.git) of the [original version](https://github.com/kritiksoman/GIMP-ML/tree/GIMP3-ML) to improve the user experience in several aspects:
+
+* (mine) adapted to run on Apple M1 and with MPS backend (check [this](https://developer.apple.com/metal/pytorch/))
+* (mine) replaced pickle I/O files with yaml for human readable configuration and status
+
 * Added more models.
 * Models are run with Python 3.10+.
-* Full error text is shown in the GIMP error dailog and in debug console.
+* Full error text is shown in the GIMP error dialog and in debug console.
 * Additional alpha channel handling in some plugins.
 * Automatic installation for Windows systems.
 * And other smaller improvements.
 
 The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
-* Windows 10
+* macOS Ventura 13.0.1
 
 # Installation Steps
-1. Install [GIMP3](https://www.gimp.org/downloads/devel/).
-2. Download this repository.
-3. On Windows:
-      * Install [Python 3.10](https://www.python.org/downloads/).
-      * Run `install.cmd` from the unpacked folder.
+1. Install [GIMP3](https://www.gimp.org/downloads/devel/) for macOS.
+2. Download/clone this repository.
+3. Edit ...
 4. You should now find the GIMP-ML plugins under Layers → GIMP-ML. 
 5. You can download [the weights here](https://drive.google.com/drive/folders/1ko7j1WOJltJcv-goIBNTIGGniZ68kEQa), or from the weight links below.
+
+Original text from the forked repository:
 
 ![Screenshot](screenshot.png)
 
