@@ -5,7 +5,6 @@ Machine Learning plugins for GIMP 3.
 Forked from [forked version](https://github.com/UserUnknownFactor/GIMP3-ML.git) of the [original version](https://github.com/kritiksoman/GIMP-ML/tree/GIMP3-ML) to improve the user experience in several aspects:
 
 * (mine) adapted to run on Apple M1 and with MPS backend (check [this](https://developer.apple.com/metal/pytorch/))
-* (mine) replaced pickle I/O files with yaml for human readable configuration and status
 
 * Added more models.
 * Models are run with Python 3.10+.
@@ -14,8 +13,9 @@ Forked from [forked version](https://github.com/UserUnknownFactor/GIMP3-ML.git) 
 * Automatic installation for Windows systems.
 * And other smaller improvements.
 
-The plugins have been tested with GIMP 2.99.12 on the following systems: <br>
-* macOS Ventura 13.0.1
+The plugins have been tested with `GIMP 2.99.14` on the following systems: <br>
+* Linux Ubuntu 22
+<!-- * macOS Ventura 13.0.1 -->
 
 # Installation Steps
 1. Install [GIMP3](https://www.gimp.org/downloads/devel/) for macOS.
